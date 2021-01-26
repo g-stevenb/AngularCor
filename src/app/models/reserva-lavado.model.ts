@@ -14,18 +14,22 @@ export class ReservaLavado {
   // this.opcAuto = oa;
   // this.opcLavado = ol;
   private selected: boolean;
+  public servicios: string[];
+
   constructor(public nombre: string,
     public email: string,
     public celular: number,
     public fecha: string,
     public opcAuto: string,
-    public opcLavado: string) { }
+    public opcLavado: string) {
+      this.servicios = ['pileta','desayuno'];
+    }
 
-  isSelected() {
-    return this.selected;
-  }
+    isSelected(){
+      return this.selected;
+    }
 
-  setSelected(s : boolean) {
-    this.selected = s;
-  }
+    setSelected(s: boolean){
+      this.selected = s;
+    }
 }

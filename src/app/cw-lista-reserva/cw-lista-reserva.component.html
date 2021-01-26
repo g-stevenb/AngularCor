@@ -54,6 +54,6 @@
     </div>
     <hr class="mb-5">
     <div class="row row-flex">
-        <app-cw-reserva-lavado *ngFor="let rl of reservaLavado" [reserva]="rl" (clicked)="elegido(rl)"></app-cw-reserva-lavado>
+        <app-cw-reserva-lavado *ngFor="let rl of reservaLavado; let i = index" [reserva]="rl" (clicked)="elegido(rl)" [idx]="i+1"></app-cw-reserva-lavado>
     </div>
 </div>

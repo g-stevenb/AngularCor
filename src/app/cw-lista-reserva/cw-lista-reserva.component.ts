@@ -15,7 +15,7 @@ export class CwListaReservaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  guardar(nombre:string, email:string, celular:number, fecha:string, opcAuto:string, opcLavado:string):boolean{
+  guardar(nombre: string, email: string, celular: number, fecha: string, opcAuto: string, opcLavado: string): boolean {
     // console.log(nombre);
     // console.log(email);
     // console.log(celular);
@@ -28,9 +28,10 @@ export class CwListaReservaComponent implements OnInit {
     return false;
   }
 
-  elegido(d:ReservaLavado){
-    this.reservaLavado.forEach(function (x) {x.setSelected(false);});
+  elegido(d:ReservaLavado) {
+    this.reservaLavado.forEach(function(x){x.setSelected(false);});
     d.setSelected(true);
-  }
+   };
+
 
 }

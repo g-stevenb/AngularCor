@@ -9,8 +9,9 @@ import { ReservaLavado } from './../models/reserva-lavado.model';
 export class CwReservaLavadoComponent implements OnInit {
 
   @Input() reserva: ReservaLavado;
+  @Input('idx') position: number;
   @HostBinding('attr.class') cssClass = 'col-md-4';
-  @Output() clicked: EventEmitter<ReservaLavado>;
+  @Output() clicked : EventEmitter<ReservaLavado>;
 
   constructor() {
     this.clicked = new EventEmitter();
@@ -18,8 +19,10 @@ export class CwReservaLavadoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   ir(){
     this.clicked.emit(this.reserva);
     return false;
   }
+
 }

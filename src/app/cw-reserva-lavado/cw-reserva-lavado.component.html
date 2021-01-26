@@ -1,7 +1,7 @@
 <div class="card-content center">
     <div class="card-img">
         <img src="https://placeimg.com/380/230/nature" alt="">
-        <span><h4>Reservas</h4></span>
+        <span><h4>Reservas: &nbsp; {{position}}</h4></span>
     </div>
     <div class="card-desc">
         <!-- <h3>{{reserva.email}}</h3> -->
@@ -10,7 +10,25 @@
             <br>Día de reserva: &nbsp;<strong>{{reserva.fecha}}</strong>
             <br>Tipo de vehiculo: &nbsp;<strong>{{reserva.opcAuto}}</strong>
             <br>Tipo de servicio: &nbsp;<strong>{{reserva.opcLavado}}</strong></p>
-        <a href="#" class="btn-card" (click)="ir()">ENVIAR</a>
-        <span [style.display]="reserva.isSelected() ? '' : 'none'">- PREFERIDO -</span>
+        <p>Services</p>
+        <ul>
+            <li *ngFor="let s of reserva.servicios">
+                <span [ngSwitch]="s">
+                <i *ngSwitchCase="'desayuno'" style="color:red">
+                  {{s}}
+                </i>
+                <i *ngSwitchDefault>
+                  {{s}}
+                </i>
+                </span>
+            </li>
+        </ul>
+        <a href="#" class="btn-card" (click)="ir()">Enviar!!</a>
+        <!-- <span [style.display]="reserva.isSelected() ? '' : 'none'"> - OK -</span> -->
+        <span *ngIf="reserva.isSelected()">
+          <span ngNonBindable>
+            {{- OK -}}
+          </span>
+        </span>
     </div>
 </div>
