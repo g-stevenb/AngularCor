@@ -1,0 +1,59 @@
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <span class="anchor" id="formLogin"></span>
+            <!-- form card login with validation feedback -->
+            <div class="card card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0">Reservas</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nombre">Tu Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingresar
+  nombre..." #nombre>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Tu email</label>
+                            <input type="text" class="form-control" id="email" placeholder="Ingresar url.." #email>
+                        </div>
+                        <div class="form-group">
+                            <label for="celular">Celular</label>
+                            <input type="text" name="" id="celular" #celular>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" name="" id="Fecha" #fecha>
+                        </div>
+                        <div class="form-group">
+                            <label for="opcionAuto">Tipo Auto</label>
+                            <!-- <input type="radio" name="" id="opcAuto"> -->
+                            <select name="opcionAuto" id="opcAuto" #opcAuto>
+                              <option value="Auto" selected>Auto</option>
+                              <option value="Camioneta" >Camioneta</option>
+                              <option value="Van">Van</option>
+                              <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="opcionLavado">Opcion Lavado</label>
+                            <!-- <input type="radio" name="" id="opcLavado"> -->
+                            <select name="opcionLavado" id="opcLavado" #opcLavado>
+                              <option value="Clásico" selected>Clásico</option>
+                              <option value="Express">Express</option>
+                              <option value="Ejecutivo">Ejecutivo</option>
+                              <option value="Premium">Premium</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="guardar(nombre.value, email.value, celular.value, fecha.value, opcAuto.value, opcLavado.value)">Guardar!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mb-5">
+    <div class="row row-flex">
+        <app-cw-reserva-lavado *ngFor="let rl of reservaLavado" [reserva]="rl" (clicked)="elegido(rl)"></app-cw-reserva-lavado>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="card-content center">
+    <div class="card-img">
+        <img src="https://placeimg.com/380/230/nature" alt="">
+        <span><h4>Reservas</h4></span>
+    </div>
+    <div class="card-desc">
+        <!-- <h3>{{reserva.email}}</h3> -->
+        <p>Nombre: &nbsp;<strong>{{reserva.nombre}}</strong>,
+            <br>Número celular: &nbsp; <strong>{{reserva.celular}}</strong>
+            <br>Día de reserva: &nbsp;<strong>{{reserva.fecha}}</strong>
+            <br>Tipo de vehiculo: &nbsp;<strong>{{reserva.opcAuto}}</strong>
+            <br>Tipo de servicio: &nbsp;<strong>{{reserva.opcLavado}}</strong></p>
+        <a href="#" class="btn-card" (click)="ir()">ENVIAR</a>
+        <span [style.display]="reserva.isSelected() ? '' : 'none'">- PREFERIDO -</span>
+    </div>
+</div>
