@@ -3,4 +3,26 @@
 <!-- <app-listado></app-listado> -->
 
 <!-- <app-mm-listar-platos></app-mm-listar-platos> -->
-<app-cw-lista-reserva></app-cw-lista-reserva>
+<!-- <app-cw-lista-reserva></app-cw-lista-reserva> -->
+
+
+<div class="container content">
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Ruteo Simple</h1>
+            <div class="navLink">
+                <a [routerLink]="['/home']">Home</a>
+                <a [routerLink]="['/reserva']">Reserva</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h1>
+            {{title}}
+        </h1>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>
